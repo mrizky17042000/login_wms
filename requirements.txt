@@ -42,7 +42,6 @@ playsound==1.2.2
 protobuf==3.12.2
 psycopg2==2.8.5
 psycopg2-binary==2.8.5
-PyAudio @ file:///C:/Users/HP/pipwin/PyAudio-0.2.11-cp38-cp38-win32.whl
 pycodestyle==2.5.0
 pyjsparser==2.7.1
 pylint==2.4.4
