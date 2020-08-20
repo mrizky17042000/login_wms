@@ -26,7 +26,7 @@ SECRET_KEY = '967v4s**#j_!s=48bw0(h^yg*+grz+g*l*-085hu=f*_apklma'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
