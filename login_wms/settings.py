@@ -26,7 +26,7 @@ SECRET_KEY = '967v4s**#j_!s=48bw0(h^yg*+grz+g*l*-085hu=f*_apklma'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -55,7 +55,10 @@ ROOT_URLCONF = 'login_wms.urls'
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+    ''
+]
 
 TEMPLATES = [
     {

@@ -1,5 +1,46 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
 {% block content %}
-<h1>Halaman Login</h1>
+<style>
+    .jumbotron {
+        width: 500px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgb(209, 207, 207);
+    }
+
+    p {
+        color: red;
+    }
+
+    .create {
+        color: blue;
+        text-align: right;
+    }
+</style>
+<div class="jumbotron">
+    <div class="container">
+        <h2>Login</h2>
+        <form method="POST" action="{% url 'login' %}">
+            {% csrf_token %}
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control" id="username" name="username" placeholder="Username . . ."
+                        required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" name="password"
+                        placeholder="Password . . ." required>
+                </div>
+            </div>
+            <button class="btn btn-sm btn-primary" type="submit">Login</button>
+        </form>
+    </div>
+</div>
 {% endblock content %}
