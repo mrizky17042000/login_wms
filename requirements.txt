@@ -22,7 +22,6 @@ heroku==0.1.4
 idna==2.10
 image==1.5.32
 imageio-ffmpeg==0.4.2
-importlib==1.0.4
 isort==4.3.21
 Js2Py==0.70
 keyboard==0.13.5
