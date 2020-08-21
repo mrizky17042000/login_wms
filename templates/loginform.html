@@ -10,15 +10,11 @@
         transform: translate(-50%, -50%);
         background-color: rgb(209, 207, 207);
     }
-
-    p {
-        color: red;
-    }
 </style>
 <div class="jumbotron">
     <div class="container">
         <h2>Login</h2>
-        <form method="POST" action="">
+        <form method="POST">
             {% csrf_token %}
             <div class="form-row">
                 <div class="form-group col-md-6">
