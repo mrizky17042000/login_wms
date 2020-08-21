@@ -12,8 +12,10 @@
             {% for u in user %}
             <h1>{{u.name}}</h1>
             {% endfor %}
+            <a href="about">Pergi ke about</a>
         </center>
         <hr class="my-4">
+        <a href="{% url 'logout' %}">LOGOUT</a>
     </div>
 </div>
 {% endblock content %}

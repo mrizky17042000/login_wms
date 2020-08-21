@@ -43,6 +43,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django_session_timeout.middleware.SessionTimeoutMiddleware',
 
     'whitenoise.middleware.WhiteNoiseMiddleware',
 
@@ -52,6 +53,10 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+SESSION_EXPIRE_SECONDS = 300
+
+SESSION_EXPIRE_AFTER_LAST_ACTIVITY = False
 
 ROOT_URLCONF = 'login_wms.urls'
 

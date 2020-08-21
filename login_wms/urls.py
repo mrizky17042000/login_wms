@@ -23,4 +23,6 @@ urlpatterns = [
     path('', include('login.urls')),
     path('', views.index, name="home"),
     path('loginform/', views.loginform, name="login"),
+    path('logout/', views.logout, name="logout"),
+    path('about/', views.about, name="about"),
 ]
