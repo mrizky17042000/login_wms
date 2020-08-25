@@ -1,28 +1,30 @@
-from django.shortcuts import render, HttpResponse, HttpResponseRedirect, redirect
+from django.shortcuts import render, redirect
 from .models import User, Role
 from .forms import LoginUserForm
 from pprint import pprint
+
+from django.contrib.sessions.backends.db import SessionStore
 
 from django.contrib.auth.decorators import login_required
 
 
 def index(request):
-    if 'user_id' not in request.session:
-        return redirect('home')
+    if '0' not in request.session:
+        return redirect('login')
     else:
         user = User.objects.all()
         return render(request, 'index.html', {'user': user})
 
 
 def about(request):
-    if 'user_id' not in request.session:
-        return redirect('home')
+    if '0' not in request.session:
+        return redirect('login')
     else:
         return render(request, "about.html")
 
 
 def loginform(request):
-    if 'user_id' in request.session:
+    if '0' in request.session:
         return redirect('home')
     else:
         if request.method == 'POST':
@@ -31,7 +33,8 @@ def loginform(request):
             password2 = m.password
             pass_model = password2.split(" ")[0]
             if pass_model == password:
-                request.session['user_id'] = m.id_user
+                request.session[0] = m.id_user
+                request.session[1] = m.id_role
                 return redirect('home')
             else:
                 return redirect('login')
@@ -41,7 +44,7 @@ def loginform(request):
 
 def logout(request):
     try:
-        del request.session['user_id']
+        del request.session['0']
         return redirect('login')
     except KeyError:
         pass

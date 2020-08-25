@@ -3,7 +3,7 @@ from django.db import models
 
 class Role(models.Model):
     id_role = models.IntegerField(primary_key=True)
-    name_role = models.CharField(max_length=25, blank=True, null=True)
+    name_role = models.CharField(max_length=25, blank=False, null=True)
 
     class Meta:
         db_table = 'role'
