@@ -34,7 +34,6 @@ def loginform(request):
             pass_model = password2.split(" ")[0]
             if pass_model == password:
                 request.session[0] = m.id_user
-                request.session[1] = m.id_role
                 return redirect('home')
             else:
                 return redirect('login')
